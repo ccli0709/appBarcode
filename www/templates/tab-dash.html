@@ -1,0 +1,43 @@
+<ion-view view-title="圖書條碼"> <ion-content class="padding">
+
+<div class="row">
+	<div class="col col-33 col-offset-33">
+		<button
+			class="button button-large button-block button-positive"
+			ng-click="scanBarcode()">掃描</button>
+	</div>
+</div>
+<div class="list">
+	<label class="item item-input item-stacked-label"> <span class="input-label">條碼內容</span> <input
+		type="text"
+		placeholder="尚未掃描條碼..."
+		ng-model='params.barcode'
+		>
+	</label> <label class="item item-input item-stacked-label"> <span class="input-label">條碼樣式</span> <input
+		type="text"
+		placeholder="尚未掃描條碼..."
+		ng-model='params.format'
+		ng-disabled='true'>
+	</label>
+</div>
+<div class="row">
+	<div class="col">
+		<button
+			class="button button-block button-calm"
+			ng-click="openUrl('books')"
+			ng-disabled='params.barcode == ""'>博客來</button>
+	</div>
+	<div class="col">
+		<button
+			class="button button-block button-calm"
+			ng-click="openUrl('iguang')"
+			ng-disabled='params.barcode == ""'>愛逛街</button>
+	</div>
+	<div class="col">
+		<button
+			class="button button-block button-calm"
+			ng-click="openUrl('google')"
+			ng-disabled='params.barcode == ""'>Google</button>
+	</div>
+</div>
+</ion-content> </ion-view>
